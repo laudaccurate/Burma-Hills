@@ -1,0 +1,229 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    link(rel='apple-touch-icon', sizes='76x76', href='../assets/img/apple-icon.png')
+    link(rel='icon', type='image/png', href='../assets/img/favicon.png')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title
+      | Burma-Hills
+    meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no', name='viewport')
+    // Fonts and icons
+    link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700,200', rel='stylesheet')
+    link(href='https://use.fontawesome.com/releases/v5.0.6/css/all.css', rel='stylesheet')
+    // CSS Files
+    link(href='/assets/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/assets/css/now-ui-kit.css?v=1.2.0', rel='stylesheet')
+    // CSS Just for demo purpose, don't include it in your project
+    link(href='/assets/demo/demo.css', rel='stylesheet')
+  body.landing-page.sidebar-collapse
+    // Navbar
+    nav.navbar.navbar-expand-lg.bg-primary.fixed-top.navbar-transparent(color-on-scroll='400')
+      .container
+        .dropdown.button-dropdown
+          a#navbarDropdown.dropdown-toggle(href='#pablo', data-toggle='dropdown')
+            span.button-bar
+            span.button-bar
+            span.button-bar
+          .dropdown-menu(aria-labelledby='navbarDropdown')
+            a.dropdown-header Dropdown header
+            a.dropdown-item(href='#') Action
+            a.dropdown-item(href='#') Another action
+            a.dropdown-item(href='#') Something else here
+            .dropdown-divider
+            a.dropdown-item(href='#') Separated link
+            .dropdown-divider
+            a.dropdown-item(href='#') One more separated link
+        .navbar-translate
+          a.navbar-brand(href='/', rel='tooltip', title='Designed by Invision. Coded by Creative Tim', data-placement='bottom', target='_blank')
+            | Burma-Hills
+          button.navbar-toggler.navbar-toggler(type='button', data-toggle='collapse', data-target='#navigation', aria-controls='navigation-index', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-bar.top-bar
+            span.navbar-toggler-bar.middle-bar
+            span.navbar-toggler-bar.bottom-bar
+        #navigation.collapse.navbar-collapse.justify-content-end(data-nav-image='../assets/img/blurred-image-1.jpg')
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link(href='burma-hills/users/signup') &nbsp &nbsp &nbsp Sign up &nbsp &nbsp &nbsp
+            li.nav-item
+              a.nav-link(href='burma-hills/users/login') &nbsp &nbsp &nbsp Login &nbsp &nbsp &nbsp
+            li.nav-item
+              a.nav-link(rel='tooltip', title='Follow us on Twitter', data-placement='bottom', href='https://twitter.com/CreativeTim', target='_blank')
+                i.fab.fa-twitter
+                p.d-lg-none.d-xl-none Twitter
+            li.nav-item
+              a.nav-link(rel='tooltip', title='Like us on Facebook', data-placement='bottom', href='https://www.facebook.com/CreativeTim', target='_blank')
+                i.fab.fa-facebook-square
+                p.d-lg-none.d-xl-none Facebook
+            li.nav-item
+              a.nav-link(rel='tooltip', title='Follow us on Instagram', data-placement='bottom', href='https://www.instagram.com/CreativeTimOfficial', target='_blank')
+                i.fab.fa-instagram
+                p.d-lg-none.d-xl-none Instagram
+    // End Navbar
+    .wrapper
+      .page-header.page-header-small
+        .page-header-image(data-parallax='true', style="background-image: url('/img/comm5.jpg');")
+        .content-center
+          .container
+            h1.title This is our great neighbourhood.
+            .text-center
+              a.btn.btn-primary.btn-icon.btn-round(href='#pablo')
+                i.fab.fa-facebook-square
+              a.btn.btn-primary.btn-icon.btn-round(href='#pablo')
+                i.fab.fa-twitter
+              a.btn.btn-primary.btn-icon.btn-round(href='#pablo')
+                i.fab.fa-google-plus
+      .section.section-about-us
+        .container
+          .row
+            .col-md-8.ml-auto.mr-auto.text-center
+              h2.title What are we up to?
+              h5.description
+                | Burma-Hills seeks to bring your neighbours closer to you than you ever thought was possible. Being continuously absent from home should not prevent you from knowing the neighbour next door, that amazing guy in your neighbourhood, the lady that moved in last week, who your kids play with...
+          .separator.separator-primary
+          .section-story-overview
+            .row
+              .col-md-6
+                .image-container.image-left(style="background-image: url('/img/neigh4.jpg')")
+                  // First image on the left side
+                  p.blockquote.blockquote-primary
+                    | "For long, I've been looking forward to meeting up with people around me who share the same interests with me, but to no avail"
+                    br
+                    br
+                    small -HELENA DAIGLE
+                // Second image on the left side of the article
+                .image-container
+                  #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+                    ol.carousel-indicators
+                      li(data-target='#carouselExampleIndicators', data-slide-to='0')
+                      li.active(data-target='#carouselExampleIndicators', data-slide-to='1')
+                      li(data-target='#carouselExampleIndicators', data-slide-to='2')
+                    .carousel-inner(role='listbox')
+                      .carousel-item
+                        img.carousel-img.d-block(src='/img/comm.jpg', alt='First slide')
+                        .carousel-caption.d-none.d-md-block
+                          h5 Nature, United States
+                      .carousel-item.active
+                        img.carousel-img.d-block(src='/img/conference.jpg', alt='Second slide')
+                        .carousel-caption.d-none.d-md-block
+                          h5 Somewhere Beyond, United States
+                      .carousel-item
+                        img.carousel-img.d-block(src='/img/kids.jpg', alt='Third slide')
+                        .carousel-caption.d-none.d-md-block
+                          h5 Yellowstone National Park, United States
+                    a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+                      i.now-ui-icons.arrows-1_minimal-left
+                    a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+                      i.now-ui-icons.arrows-1_minimal-right
+
+              .col-md-5
+                // First image on the right side, above the article
+                .image-container.image-right(style="background-image: url('/img/comm2.jpg')")
+                h3 So what does the new record for the lowest level of winter ice actually mean
+                p
+                  | The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever happens with climate change. Even if the Arctic continues to be one of the fastest-warming regions of the world, it will always be plunged into bitterly cold polar dark every winter. And year-by-year, for all kinds of natural reasons, there’s huge variety of the state of the ice.
+                p
+                  | For a start, it does not automatically follow that a record amount of ice will melt this summer. More important for determining the size of the annual thaw is the state of the weather as the midnight sun approaches and temperatures rise. But over the more than 30 years of satellite records, scientists have observed a clear pattern of decline, decade-by-decade.
+                p
+                  | The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever happens with climate change. Even if the Arctic continues to be one of the fastest-warming regions of the world, it will always be plunged into bitterly cold polar dark every winter. And year-by-year, for all kinds of natural reasons, there’s huge variety of the state of the ice.
+      .section.section-team.text-center
+        .container
+          h2.title Here is our team
+          .team
+            .row
+              .col-md-4
+                .team-player
+                  img.rounded-circle.img-fluid.img-raised(src='../assets/img/avatar.jpg', alt='Thumbnail Image')
+                  h4.title Romina Hadid
+                  p.category.text-primary Model
+                  p.description
+                    | You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
+                    a(href='#') links
+                    |  for people to be able to follow them outside the site.
+                  a.btn.btn-primary.btn-icon.btn-round(href='#pablo')
+                    i.fab.fa-twitter
+                  a.btn.btn-primary.btn-icon.btn-round(href='#pablo')
+                    i.fab.fa-instagram
+                  a.btn.btn-primary.btn-icon.btn-round(href='#pablo')
+                    i.fab.fa-facebook-square
+              .col-md-4
+                .team-player
+                  img.rounded-circle.img-fluid.img-raised(src='../assets/img/ryan.jpg', alt='Thumbnail Image')
+                  h4.title Ryan Tompson
+                  p.category.text-primary Designer
+                  p.description
+                    | You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
+                    a(href='#') links
+                    |  for people to be able to follow them outside the site.
+                  a.btn.btn-primary.btn-icon.btn-round(href='#pablo')
+                    i.fab.fa-twitter
+                  a.btn.btn-primary.btn-icon.btn-round(href='#pablo')
+                    i.fab.fa-linkedin
+              .col-md-4
+                .team-player
+                  img.rounded-circle.img-fluid.img-raised(src='../assets/img/eva.jpg', alt='Thumbnail Image')
+                  h4.title Eva Jenner
+                  p.category.text-primary Fashion
+                  p.description
+                    | You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
+                    a(href='#') links
+                    |  for people to be able to follow them outside the site.
+                  a.btn.btn-primary.btn-icon.btn-round(href='#pablo')
+                    i.fab.fa-google-plus
+                  a.btn.btn-primary.btn-icon.btn-round(href='#pablo')
+                    i.fab.fa-youtube
+                  a.btn.btn-primary.btn-icon.btn-round(href='#pablo')
+                    i.fab.fa-twitter
+      .section.section-contact-us.text-center
+        .container
+          h2.title Want to work with us?
+          p.description Your project is very important to us.
+          .row
+            .col-lg-6.text-center.col-md-8.ml-auto.mr-auto
+              .input-group.input-lg
+                .input-group-prepend
+                  span.input-group-text
+                    i.now-ui-icons.users_circle-08
+                input.form-control(type='text', placeholder='First Name...')
+              .input-group.input-lg
+                .input-group-prepend
+                  span.input-group-text
+                    i.now-ui-icons.ui-1_email-85
+                input.form-control(type='text', placeholder='Email...')
+              .textarea-container
+                textarea.form-control(name='name', rows='4', cols='80', placeholder='Type a message...')
+              .send-button
+                a.btn.btn-primary.btn-round.btn-block.btn-lg(href='#pablo') Send Message
+      footer.footer.footer-default
+        .container
+          nav
+            ul
+              li
+                a(href='/')
+                  | Burma-Hills
+              li
+                a(href='/burma-hills/presentation')
+                  | About Us
+              li
+                a(href='/burma-hills/blog')
+                  | Blog
+          #copyright.copyright
+            | ©
+            script.
+              document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+            | , Designed and Coded by
+            a(href='https://www.invisionapp.com', target='_blank')  AccurateIT Inc.
+    // Core JS Files
+    script(src='/assets/js/core/jquery.min.js', type='text/javascript')
+    script(src='/assets/js/core/popper.min.js', type='text/javascript')
+    script(src='/assets/js/core/bootstrap.min.js', type='text/javascript')
+    // Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/
+    script(src='/assets/js/plugins/bootstrap-switch.js')
+    // Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/
+    script(src='/assets/js/plugins/nouislider.min.js', type='text/javascript')
+    // Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker
+    script(src='/assets/js/plugins/bootstrap-datepicker.js', type='text/javascript')
+    // Google Maps Plugin
+    script(src='https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE')
+    // Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc
+    script(src='/assets/js/now-ui-kit.js?v=1.2.0', type='text/javascript')

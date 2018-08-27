@@ -1,0 +1,172 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    link(rel='apple-touch-icon', sizes='76x76', href='/assets/img/apple-icon.png')
+    link(rel='icon', type='image/png', href='/assets/img/favicon.png')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title
+      | Now UI Kit by Creative Tim
+    meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no', name='viewport')
+    // Fonts and icons
+    link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700,200', rel='stylesheet')
+    link(href='https://use.fontawesome.com/releases/v5.0.6/css/all.css', rel='stylesheet')
+    // CSS Files
+    link(href='/assets/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/assets/css/now-ui-kit.css?v=1.2.0', rel='stylesheet')
+    // CSS Just for demo purpose, don't include it in your project
+    link(href='/assets/demo/demo.css', rel='stylesheet')
+  body.profile-page.sidebar-collapse
+    // Navbar
+    nav.navbar.navbar-expand-lg.bg-primary.fixed-top.navbar-transparent(color-on-scroll='400')
+      .container
+        .dropdown.button-dropdown
+          a#navbarDropdown.dropdown-toggle(href='#pablo', data-toggle='dropdown')
+            span.button-bar
+            span.button-bar
+            span.button-bar
+          .dropdown-menu(aria-labelledby='navbarDropdown')
+            a.dropdown-header Dropdown header
+            a.dropdown-item(href='#') Action
+            a.dropdown-item(href='#') Another action
+            a.dropdown-item(href='#') Something else here
+            .dropdown-divider
+            a.dropdown-item(href='#') Separated link
+            .dropdown-divider
+            a.dropdown-item(href='#') One more separated link
+        .navbar-translate
+          a.navbar-brand(href='https://demos.creative-tim.com/now-ui-kit/index.html', rel='tooltip', title='Designed by Invision. Coded by Creative Tim', data-placement='bottom', target='_blank')
+            | Burma-Hills
+          button.navbar-toggler.navbar-toggler(type='button', data-toggle='collapse', data-target='#navigation', aria-controls='navigation-index', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-bar.top-bar
+            span.navbar-toggler-bar.middle-bar
+            span.navbar-toggler-bar.bottom-bar
+        #navigation.collapse.navbar-collapse.justify-content-end(data-nav-image='../assets/img/blurred-image-1.jpg')
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link(href='burma-hills/users/dashboard') Dashboard
+            li.nav-item
+              a.nav-link(href='/burma-hills/users/issues')  Have an issue?
+            li.nav-item
+              a.nav-link(href='/logout') Logout
+            li.nav-item
+              a.nav-link(rel='tooltip', title='Follow us on Twitter', data-placement='bottom', href='https://twitter.com/CreativeTim', target='_blank')
+                i.fab.fa-twitter
+                p.d-lg-none.d-xl-none Twitter
+            li.nav-item
+              a.nav-link(rel='tooltip', title='Like us on Facebook', data-placement='bottom', href='https://www.facebook.com/CreativeTim', target='_blank')
+                i.fab.fa-facebook-square
+                p.d-lg-none.d-xl-none Facebook
+            li.nav-item
+              a.nav-link(rel='tooltip', title='Follow us on Instagram', data-placement='bottom', href='https://www.instagram.com/CreativeTimOfficial', target='_blank')
+                i.fab.fa-instagram
+                p.d-lg-none.d-xl-none Instagram
+    // End Navbar
+    .wrapper
+      .page-header.clear-filter(filter-color='orange')
+        .page-header-image(data-parallax='true', style="background-image:url('/assets/img/bg5.jpg');")
+        .container
+          .photo-container
+            img(src='/assets/img/ryan.jpg', alt='')
+          h3.title Ryan Scheinder
+          p.category Photographer
+          .content
+            .social-description
+              h2 26
+              p Comments
+            .social-description
+              h2 26
+              p Comments
+            .social-description
+              h2 48
+              p Bookmarks
+      .section
+        .container
+          .button-container
+            a.btn.btn-primary.btn-round.btn-lg(href='#button') Follow
+            a.btn.btn-default.btn-round.btn-lg.btn-icon(href='#button', rel='tooltip', title='Follow me on Twitter')
+              i.fab.fa-twitter
+            a.btn.btn-default.btn-round.btn-lg.btn-icon(href='#button', rel='tooltip', title='Follow me on Instagram')
+              i.fab.fa-instagram
+          h3.title About me
+          h5.description
+            | An artist of considerable range, Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.
+          .row
+            .col-md-6.ml-auto.mr-auto
+              h4.title.text-center My Portfolio
+              .nav-align-center
+                ul.nav.nav-pills.nav-pills-primary.nav-pills-just-icons(role='tablist')
+                  li.nav-item
+                    a.nav-link(data-toggle='tab', href='#profile', role='tablist')
+                      i.now-ui-icons.design_image
+                  li.nav-item
+                    a.nav-link.active(data-toggle='tab', href='#home', role='tablist')
+                      i.now-ui-icons.location_world
+                  li.nav-item
+                    a.nav-link(data-toggle='tab', href='#messages', role='tablist')
+                      i.now-ui-icons.sport_user-run
+            // Tab panes
+            .tab-content.gallery
+              #home.tab-pane.active(role='tabpanel')
+                .col-md-10.ml-auto.mr-auto
+                  .row.collections
+                    .col-md-6
+                      img.img-raised(src='/assets/img/bg1.jpg', alt='')
+                      img.img-raised(src='/assets/img/bg3.jpg', alt='')
+                    .col-md-6
+                      img.img-raised(src='/assets/img/bg8.jpg', alt='')
+                      img.img-raised(src='/assets/img/bg7.jpg', alt='')
+              #profile.tab-pane(role='tabpanel')
+                .col-md-10.ml-auto.mr-auto
+                  .row.collections
+                    .col-md-6
+                      img.img-raised(src='/assets/img/bg6.jpg')
+                      img.img-raised(src='/assets/img/bg11.jpg', alt='')
+                    .col-md-6
+                      img.img-raised(src='/assets/img/bg7.jpg', alt='')
+                      img.img-raised(src='/assets/img/bg8.jpg', alt='')
+              #messages.tab-pane(role='tabpanel')
+                .col-md-10.ml-auto.mr-auto
+                  .row.collections
+                    .col-md-6
+                      img.img-raised(src='/assets/img/bg3.jpg', alt='')
+                      img.img-raised(src='/assets/img/bg8.jpg', alt='')
+                    .col-md-6
+                      img.img-raised(src='/assets/img/bg7.jpg', alt='')
+                      img.img-raised(src='/assets/img/bg6.jpg')
+      footer.footer.footer-default
+        .container
+          nav
+            ul
+              li
+                a(href='https://www.creative-tim.com')
+                  | Creative Tim
+              li
+                a(href='http://presentation.creative-tim.com')
+                  | About Us
+              li
+                a(href='http://blog.creative-tim.com')
+                  | Blog
+          #copyright.copyright
+            | ©
+            script.
+              document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+            | , Designed by
+            a(href='https://www.invisionapp.com', target='_blank') Invision
+            | . Coded by
+            a(href='https://www.creative-tim.com', target='_blank') Creative Tim
+            | .
+    // Core JS Files
+    script(src='/assets/js/core/jquery.min.js', type='text/javascript')
+    script(src='/assets/js/core/popper.min.js', type='text/javascript')
+    script(src='/assets/js/core/bootstrap.min.js', type='text/javascript')
+    // Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/
+    script(src='/assets/js/plugins/bootstrap-switch.js')
+    // Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/
+    script(src='/assets/js/plugins/nouislider.min.js', type='text/javascript')
+    // Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker
+    script(src='/assets/js/plugins/bootstrap-datepicker.js', type='text/javascript')
+    // Google Maps Plugin
+    script(src='https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE')
+    // Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc
+    script(src='/assets/js/now-ui-kit.js?v=1.2.0', type='text/javascript')

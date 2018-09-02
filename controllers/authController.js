@@ -5,24 +5,17 @@ const User = mongoose.model("User");
 
 const createUser = async (req, res, next) => {
   try {
-    const { fullName, email, password, confirmPassword } = req.body;
-
-    // if (
-    //   !fullName.trim() ||
-    //   !email.trim() ||
-    //   !password.trim() ||
-    //   !confirmPassword.trim()
-    // ) {
-    //   return util.error("All fields required", next);
-    // }
-
-    // if (password !== confirmPassword) {
-    //   return util.error("Passwords do not match", next);
-    // }
-
-    const foundUser = await User.findOne({ email });
-    if (foundUser) {
-      return util.error("an account with same email already exists", next);
+    const { email, password, telephoneNumber } = req.body;
+    const foundEmail = await User.findOne({ email });
+    if (foundEmail) {
+      return util.error("An account with same email already exists", next);
+    }
+    const foundTelephoneNumber = await User.findOne({ telephoneNumber });
+    if (foundTelephoneNumber) {
+      return util.error(
+        "An account with same telephone number already exists",
+        next
+      );
     }
 
     const hash = await bcrypt.hash(password, 10);
@@ -32,8 +25,8 @@ const createUser = async (req, res, next) => {
     });
     req.session.userId = user._id;
     req.session.userEmail = user.email;
-    res.locals.currentUser = user.email;
-    return res.redirect("/history");
+    res.locals.currentUser = user;
+    return res.redirect("/profile");
   } catch (error) {
     return next(error);
   }
@@ -53,10 +46,10 @@ const logIn = async (req, res, next) => {
       return util.error("Incorrect password", next, 403);
     }
     req.session.userId = user._id;
-    req.session.isAdmin = user.isAdmin;
     req.session.userEmail = user.email;
-    return user.isAdmin ? res.redirect("/admin") : res.redirect("/history");
+    return res.redirect("/profile");
   } catch (error) {
+    console.log(error);
     return next(error);
   }
 };

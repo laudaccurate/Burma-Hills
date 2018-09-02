@@ -66,7 +66,7 @@ html(lang='en')
         .container
           .col-md-4.ml-auto.mr-auto
             .card.card-plain.card-login(style="width:650px;")
-              form.form(method='POST', action='/burma-hills/users/signup')
+              form.form(method='POST', action='/signup')
                 .card-header.text-center
                   ul.nav.nav-tabs.justify-content-center(role=tablist)
                     li.nav-item
@@ -90,12 +90,12 @@ html(lang='en')
                           span.input-group-text
                             i.now-ui-icons.ui-1_email-85
                         input.form-control(required type='text', name="dateOfBirth" onfocus="this.type='date'" placeholder='Date of Birth...')
-                      .input-group.no-border.input-lg.ml-3
-                        .form-check.form-check-radio.form-check-inline
-                          label.form-check-label
-                            input#male.form-check-input(type='radio', name='gender', value='Male')
-                            | Male &nbsp &nbsp
-                            span.form-check-sign
+                      //- .input-group.no-border.input-lg.ml-3
+                      //-   .form-check.form-check-radio.form-check-inline
+                      //-     label.form-check-label
+                      //-       input#male.form-check-input(type='radio', name='gender', value='Male')
+                      //-       | Male &nbsp &nbsp
+                      //-       span.form-check-sign
                         .form-check.form-check-radio.form-check-inline
                           label.form-check-label
                             input#female.form-check-input(type='radio', name='gender', value='Female')
@@ -123,7 +123,7 @@ html(lang='en')
                         .input-group-prepend
                           span.input-group-text
                             i.now-ui-icons.ui-1_email-85
-                        input.form-control(required type='text', name="telephonenUmber" placeholder='Telephone Number...')
+                        input.form-control(required type='text', name="telephoneNumber" placeholder='Telephone Number...')
                       .input-group.no-border.input-lg
                         .input-group-prepend
                           span.input-group-text

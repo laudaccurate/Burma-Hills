@@ -6,10 +6,10 @@ const UserSchema = new Schema({
   email: { type: String, required: true, trim: true, unique: true },
   dateOfBirth: { type: Date, required: true },
   profession: { type: String, required: true, trim: true },
-  houseNumber: { type: String, required: true, trim: true, unique: true },
+  houseNumber: { type: String, required: true, trim: true },
   familySize: Number,
   password: { type: String, required: true },
-  gender: { type: String, required: true, trim: true },
+  // gender: { type: String, required: true, trim: true },
   telephoneNumber: { type: String, required: true, unique: true },
   gallery: [String],
   bio: String

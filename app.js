@@ -4,7 +4,7 @@ const path = require("path");
 const pug = require("pug");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
-// require("./models");
+require("./models");
 
 // Only used in development mode to set environment variables
 if (process.env.NODE_ENV !== "production") {
@@ -50,7 +50,7 @@ app.use((req, res, next) => {
 });
 
 // route Handler
-require("./routes/AutnRoutes")(app);
+require("./routes")(app);
 
 // 404 handler
 app.use((req, res, next) => {

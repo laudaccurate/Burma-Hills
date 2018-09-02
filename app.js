@@ -32,7 +32,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.resolve(__dirname, "public")));
 mongoose.connect(
   process.env.MONGO_URI,
-  { autoReconnect: true },
+  { autoReconnect: true, useNewUrlParser: true },
   err => {
     if (err) return console.log("Database connection error");
     return console.log("Database connected successfully");

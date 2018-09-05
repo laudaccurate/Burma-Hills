@@ -1,0 +1,181 @@
+extends dashboard-layout.pug
+
+block main
+  // End Navbar
+  .panel-header.panel-header-lg
+    canvas#bigDashboardChart
+  .content
+    .row
+      .col-lg-4
+        .card.card-chart
+          .card-header
+            h5.card-category Global Sales
+            h4.card-title Shipped Products
+            .dropdown
+              button.btn.btn-round.btn-default.dropdown-toggle.btn-simple.btn-icon.no-caret(type='button', data-toggle='dropdown')
+                i.now-ui-icons.loader_gear
+              .dropdown-menu.dropdown-menu-right
+                a.dropdown-item(href='#') Action
+                a.dropdown-item(href='#') Another action
+                a.dropdown-item(href='#') Something else here
+                a.dropdown-item.text-danger(href='#') Remove Data
+          .card-body
+            .chart-area
+              canvas#lineChartExample
+          .card-footer
+            .stats
+              i.now-ui-icons.arrows-1_refresh-69
+              |  Just Updated
+      .col-lg-4.col-md-6
+        .card.card-chart
+          .card-header
+            h5.card-category 2018 Sales
+            h4.card-title All products
+            .dropdown
+              button.btn.btn-round.btn-default.dropdown-toggle.btn-simple.btn-icon.no-caret(type='button', data-toggle='dropdown')
+                i.now-ui-icons.loader_gear
+              .dropdown-menu.dropdown-menu-right
+                a.dropdown-item(href='#') Action
+                a.dropdown-item(href='#') Another action
+                a.dropdown-item(href='#') Something else here
+                a.dropdown-item.text-danger(href='#') Remove Data
+          .card-body
+            .chart-area
+              canvas#lineChartExampleWithNumbersAndGrid
+          .card-footer
+            .stats
+              i.now-ui-icons.arrows-1_refresh-69
+              |  Just Updated
+      .col-lg-4.col-md-6
+        .card.card-chart
+          .card-header
+            h5.card-category Email Statistics
+            h4.card-title 24 Hours Performance
+          .card-body
+            .chart-area
+              canvas#barChartSimpleGradientsNumbers
+          .card-footer
+            .stats
+              i.now-ui-icons.ui-2_time-alarm
+              |  Last 7 days
+    .row
+      .col-md-6
+        .card.card-tasks
+          .card-header
+            h5.card-category Backend development
+            h4.card-title Tasks
+          .card-body
+            .table-full-width.table-responsive
+              table.table
+                tbody
+                  tr
+                    td
+                      .form-check
+                        label.form-check-label
+                          input.form-check-input(type='checkbox', checked='')
+                          span.form-check-sign
+                    td.text-left Sign contract for "What are conference organizers afraid of?"
+                    td.td-actions.text-right
+                      button.btn.btn-info.btn-round.btn-icon.btn-icon-mini.btn-neutral(type='button', rel='tooltip', title='', data-original-title='Edit Task')
+                        i.now-ui-icons.ui-2_settings-90
+                      button.btn.btn-danger.btn-round.btn-icon.btn-icon-mini.btn-neutral(type='button', rel='tooltip', title='', data-original-title='Remove')
+                        i.now-ui-icons.ui-1_simple-remove
+                  tr
+                    td
+                      .form-check
+                        label.form-check-label
+                          input.form-check-input(type='checkbox')
+                          span.form-check-sign
+                    td.text-left Lines From Great Russian Literature? Or E-mails From My Boss?
+                    td.td-actions.text-right
+                      button.btn.btn-info.btn-round.btn-icon.btn-icon-mini.btn-neutral(type='button', rel='tooltip', title='', data-original-title='Edit Task')
+                        i.now-ui-icons.ui-2_settings-90
+                      button.btn.btn-danger.btn-round.btn-icon.btn-icon-mini.btn-neutral(type='button', rel='tooltip', title='', data-original-title='Remove')
+                        i.now-ui-icons.ui-1_simple-remove
+                  tr
+                    td
+                      .form-check
+                        label.form-check-label
+                          input.form-check-input(type='checkbox', checked='')
+                          span.form-check-sign
+                    td.text-left
+                      | Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                    td.td-actions.text-right
+                      button.btn.btn-info.btn-round.btn-icon.btn-icon-mini.btn-neutral(type='button', rel='tooltip', title='', data-original-title='Edit Task')
+                        i.now-ui-icons.ui-2_settings-90
+                      button.btn.btn-danger.btn-round.btn-icon.btn-icon-mini.btn-neutral(type='button', rel='tooltip', title='', data-original-title='Remove')
+                        i.now-ui-icons.ui-1_simple-remove
+          .card-footer
+            hr
+            .stats
+              i.now-ui-icons.loader_refresh.spin
+              |  Updated 3 minutes ago
+      .col-md-6
+        .card
+          .card-header
+            h5.card-category All Persons List
+            h4.card-title  Employees Stats
+          .card-body
+            .table-responsive
+              table.table
+                thead.text-primary
+                  tr
+                    th
+                      | Name
+                    th
+                      | Country
+                    th
+                      | City
+                    th.text-right
+                      | Salary
+                tbody
+                  tr
+                    td
+                      | Dakota Rice
+                    td
+                      | Niger
+                    td
+                      | Oud-Turnhout
+                    td.text-right
+                      | $36,738
+                  tr
+                    td
+                      | Minerva Hooper
+                    td
+                      | Curaçao
+                    td
+                      | Sinaai-Waas
+                    td.text-right
+                      | $23,789
+                  tr
+                    td
+                      | Sage Rodriguez
+                    td
+                      | Netherlands
+                    td
+                      | Baileux
+                    td.text-right
+                      | $56,142
+                  tr
+                    td
+                      | Doris Greene
+                    td
+                      | Malawi
+                    td
+                      | Feldkirchen in Kärnten
+                    td.text-right
+                      | $63,542
+                  tr
+                    td
+                      | Mason Porter
+                    td
+                      | Chile
+                    td
+                      | Gloucester
+                    td.text-right
+                      | $78,615
+  script.
+    //- $(document).ready(function() {
+    //-   // Javascript method's body can be found in assets/js/demos.js
+    //-   demo.initDashboardPageCharts();
+    //- });

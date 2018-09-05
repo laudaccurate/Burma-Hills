@@ -9,7 +9,7 @@ const requireLogout = (req, res, next) => {
   if (req.session.userId && req.session.isAdmin) {
     return res.redirect("/admin");
   } else if (req.session.userId) {
-    return res.redirect("/profile");
+    return res.redirect("/users/dashboard");
   }
   return next();
 };

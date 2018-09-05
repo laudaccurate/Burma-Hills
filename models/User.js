@@ -11,6 +11,7 @@ const UserSchema = new Schema({
   password: { type: String, required: true },
   // gender: { type: String, required: true, trim: true },
   telephoneNumber: { type: String, required: true, unique: true },
+  profilePic: { type: String },
   gallery: [String],
   bio: String
 });

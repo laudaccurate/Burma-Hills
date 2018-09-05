@@ -3,9 +3,10 @@ const { requireLogin } = require("../middleware");
 const User = mongoose.model("User");
 
 module.exports = app => {
-  app.get("/users/dashboard", async (req, res, next) => {
+  app.get("/users/dashboard", requireLogin, async (req, res, next) => {
     try {
-      const user = await User.findById(req.session.userId);
+      const user = await User.findById(req.session.userId).lean();
+      console.log(Object.keys(user));
       return res.render("dashboard", { user, title: "Dashboard" });
     } catch (error) {
       return next(error);

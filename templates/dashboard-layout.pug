@@ -24,7 +24,7 @@ html(lang='en')
         .logo
           //- a.simple-text.logo-mini(href='http://www.creative-tim.com')
           //-   | Hi
-          a.simple-text.logo-normal(href='http://www.creative-tim.com')
+          a.simple-text.logo-normal(href=`/users/${user._id}/viewProfile`)
             | Hi, #{user.fullName}
         .sidebar-wrapper
           ul.nav
@@ -38,7 +38,7 @@ html(lang='en')
                 p Profile
             li
               a(href='/users/neighbours')
-                i.now-ui-icons.location_map-big
+                i.now-ui-icons.objects_globe
                 p Neighbours
             li
               a(href='/users/notifications')
@@ -46,15 +46,15 @@ html(lang='en')
                 p Notifications
             li
               a(href='/burma-hills/events')
-                i.now-ui-icons.education_atom
-                p Events
+                i.now-ui-icons.ui-1_calendar-60
+                p Upcoming Events
             li
               a(href='./tables.html')
                 i.now-ui-icons.design_bullet-list-67
                 p Reports & Suggestions
             li
               a(href='./typography.html')
-                i.now-ui-icons.text_caps-small
+                i.now-ui-icons.business_money-coins
                 p Dues & COntributions
             li.active-pro
               a(href='./upgrade.html')
@@ -84,13 +84,13 @@ html(lang='en')
                       i.now-ui-icons.ui-1_zoom-bold
               ul.navbar-nav
                 li.nav-item
-                  a.nav-link(href='#pablo')
-                    i.now-ui-icons.media-2_sound-wave
+                  a.nav-link(href=`/users/${user._id}/viewProfile`)
+                    i.now-ui-icons.users_single-02
                     p
                       span.d-lg-none.d-md-block Stats
                 li.nav-item.dropdown
                   a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='http://example.com', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-                    i.now-ui-icons.location_world
+                    i.now-ui-icons.ui-1_bell-53
                     p
                       span.d-lg-none.d-md-block Some Actions
                   .dropdown-menu.dropdown-menu-right(aria-labelledby='navbarDropdownMenuLink')
@@ -98,8 +98,8 @@ html(lang='en')
                     a.dropdown-item(href='#') Another action
                     a.dropdown-item(href='#') Something else here
                 li.nav-item
-                  a.nav-link(href='#pablo')
-                    i.now-ui-icons.users_single-02
+                  a.nav-link(href='/logout')
+                    i.now-ui-icons.media-1_button-power
                     p
                       span.d-lg-none.d-md-block Account
         block main

@@ -1,0 +1,27 @@
+extends dashboard-layout.pug
+
+block main
+  // End Navbar
+  .panel-header.panel-header-sm
+  .content
+    .row
+      .col-md-12
+        .card
+          .card-header
+            h4.card-title  Neighbours
+          .card-body
+            .table-responsive
+              table.table
+                thead.text-primary 
+                  th Name
+                  th Email
+                  th Telephone
+                  th House Number
+                tbody
+                  each neighbour in neighbours
+                    tr
+                      td #{neighbour.fullName}
+                      td #{neighbour.email}
+                      td #{neighbour.telephoneNumber}
+                      td #{neighbour.houseNumber}
+                  

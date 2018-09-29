@@ -16,6 +16,7 @@ html(lang='en')
     link(href='/assets/css/now-ui-dashboard.css?v=1.1.0', rel='stylesheet')
     // CSS Just for demo purpose, don't include it in your project
     link(href='/assets/demo/demo.css', rel='stylesheet')
+    script(src="/js/sweetalert.min.js" type="text/javascript")
   body
     .wrapper
       .sidebar(data-color='orange')
@@ -29,37 +30,37 @@ html(lang='en')
         .sidebar-wrapper
           ul.nav
             li.active
-              a(href='/users/dashboard')
+              a.link(href='/users/dashboard')
                 i.now-ui-icons.design_app
                 p Dashboard
             li
-              a(href='/users/profile')
+              a.link(href='/users/profile')
                 i.now-ui-icons.users_single-02
                 p Profile
             li
-              a(href='/users/neighbours')
+              a.link(href='/users/neighbours')
                 i.now-ui-icons.objects_globe
                 p Neighbours
             li
-              a(href='/users/notifications')
-                i.now-ui-icons.ui-1_bell-53
-                p Notifications
-            li
-              a(href='/burma-hills/events')
+              a.link(href='/burma-hills/events')
                 i.now-ui-icons.ui-1_calendar-60
                 p Upcoming Events
             li
-              a(href='./tables.html')
+              a.link(href='#')
+                i.now-ui-icons.ui-1_bell-53
+                p Notifications
+            li
+              a.link(href='#')
                 i.now-ui-icons.design_bullet-list-67
                 p Reports & Suggestions
             li
-              a(href='./typography.html')
+              a.link(href='#')
                 i.now-ui-icons.business_money-coins
-                p Dues & COntributions
+                p Dues & Contributions
             li.active-pro
-              a(href='./upgrade.html')
+              a.link(href='#')
                 i.now-ui-icons.arrows-1_cloud-download-93
-                p Upgrade to PRO
+                p Uploaded Photos
       .main-panel
         // Navbar
         nav.navbar.navbar-expand-lg.navbar-transparent.navbar-absolute.bg-primary.fixed-top
@@ -94,9 +95,9 @@ html(lang='en')
                     p
                       span.d-lg-none.d-md-block Some Actions
                   .dropdown-menu.dropdown-menu-right(aria-labelledby='navbarDropdownMenuLink')
-                    a.dropdown-item(href='#') Action
-                    a.dropdown-item(href='#') Another action
-                    a.dropdown-item(href='#') Something else here
+                    a.dropdown-item(href=`/users/${user._id}/viewProfile`) Profile
+                    a.dropdown-item(href='/users/profile') Account
+                    a.dropdown-item(href='/logout') Logout
                 li.nav-item
                   a.nav-link(href='/logout')
                     i.now-ui-icons.media-1_button-power
@@ -140,5 +141,15 @@ html(lang='en')
     script(src='/assets/js/now-ui-dashboard.min.js?v=1.1.0', type='text/javascript')
     // Now Ui Dashboard DEMO methods, don't include it in your project!
     script(src='/assets/demo/demo.js')
+    script.
+      $(window).on("load", () => {
+        $(".link").parent().removeClass("active");
+
+        $(".link").each((index, one) => {
+          if($(one).attr("href") === location.pathname) {
+            $(one).parent().addClass("active");
+          }
+        })
+      });
     block scripts
     

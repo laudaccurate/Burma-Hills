@@ -5,17 +5,21 @@ const User = mongoose.model("User");
 
 const createUser = async (req, res, next) => {
   try {
-    const { email, password, telephoneNumber } = req.body;
-    const foundEmail = await User.findOne({ email });
-    if (foundEmail) {
-      return util.error("An account with same email already exists", next);
+    const { fullName, email, password, confirmPassword } = req.body;
+    console.log(req.body);
+
+    if (!fullName || !email || !password || !confirmPassword) {
+      return res.render("signup", {
+        errorMessage: "Please, make sure all required fields are filled"
+      });
     }
-    const foundTelephoneNumber = await User.findOne({ telephoneNumber });
-    if (foundTelephoneNumber) {
-      return util.error(
-        "An account with same telephone number already exists",
-        next
-      );
+
+    const foundEmail = await User.findOne({ email });
+
+    if (foundEmail) {
+      return res.render("signup", {
+        errorMessage: "An account with the same email already exists"
+      });
     }
 
     const hash = await bcrypt.hash(password, 10);
@@ -38,12 +42,16 @@ const logIn = async (req, res, next) => {
     const user = await User.findOne({ email });
 
     if (!user) {
-      return util.error("No user exists with the provided email", next);
+      return res.render("login", {
+        errorMessage: "No user exists with the provided email"
+      });
     }
 
     const matching = await bcrypt.compare(password, user.password);
     if (!matching) {
-      return util.error("Incorrect password", next, 403);
+      return res.render("login", {
+        errorMessage: "Incorrect Passwords"
+      });
     }
     req.session.userId = user._id;
     req.session.userEmail = user.email;

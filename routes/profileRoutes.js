@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { requireLogin } = require("../middleware");
 const User = mongoose.model("User");
+const { updateProfile } = require("../controllers/profileController");
 
 module.exports = app => {
   app.param("userId", async (req, res, next, id) => {
@@ -31,11 +32,15 @@ module.exports = app => {
     }
   });
 
-  app.post("/users/:userId/updateProfile", requireLogin);
+  app.post("/users/:userId/updateProfile", requireLogin, updateProfile);
+
+  app.post("/users/:userId/updatePhoto", requireLogin, (req, res) => {
+    return res.json("profile photo changed");
+  });
 
   app.get("/users/profile/dashboard", requireLogin, async (req, res, next) => {
     try {
-      const user = await user.findOne({ _id: req.session.userId });
+      const user = await User.findOne({ _id: req.session.userId });
       return res.render("dashboard", { user });
     } catch (error) {
       return next(error);
@@ -55,5 +60,10 @@ module.exports = app => {
     } catch (error) {
       return next(error);
     }
+  });
+
+  app.get("/burma-hills/events", requireLogin, async (req, res, next) => {
+    const user = await User.findOne({ _id: req.session.userId });
+    return res.render("events", { user });
   });
 };

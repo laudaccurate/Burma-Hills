@@ -17,6 +17,7 @@ block main
                   th Email
                   th Telephone
                   th House Number
+                  th
                 tbody
                   each neighbour in neighbours
                     tr
@@ -24,4 +25,7 @@ block main
                       td #{neighbour.email}
                       td #{neighbour.telephoneNumber}
                       td #{neighbour.houseNumber}
+                      td
+                        a(href=`/users/${neighbour._id}/viewProfile`)
+                          i.fa.fa-eye
                   

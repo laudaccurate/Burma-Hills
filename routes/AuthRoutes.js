@@ -6,13 +6,13 @@ module.exports = app => {
     return res.render("signup");
   });
 
-  app.post("/signup", requireLogout, createUser);
+  app.post("/signup", createUser);
 
   app.get("/login", requireLogout, (req, res, next) => {
     return res.render("login");
   });
 
-  app.post("/login", requireLogout, logIn);
+  app.post("/login", logIn);
 
   app.get("/logout", requireLogin, logout);
 };

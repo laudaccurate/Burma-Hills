@@ -6,7 +6,7 @@ html(lang='en')
     link(rel='icon', type='image/png', href='/assets/img/favicon.png')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
     title
-      | Now UI Kit by Creative Tim
+      | Burma-Hills
     meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no', name='viewport')
     // Fonts and icons
     link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700,200', rel='stylesheet')
@@ -44,15 +44,15 @@ html(lang='en')
         #navigation.collapse.navbar-collapse.justify-content-end(data-nav-image='../assets/img/blurred-image-1.jpg')
           ul.navbar-nav
             li.nav-item
-              a.nav-link(rel='tooltip', title='Follow us on Twitter', data-placement='bottom', href='https://twitter.com/CreativeTim', target='_blank')
+              a.nav-link(rel='tooltip', title='Follow me on Twitter', data-placement='bottom', href='https://twitter.com/CreativeTim', target='_blank')
                 i.fab.fa-twitter
                 p.d-lg-none.d-xl-none Twitter
             li.nav-item
-              a.nav-link(rel='tooltip', title='Like us on Facebook', data-placement='bottom', href='https://www.facebook.com/CreativeTim', target='_blank')
+              a.nav-link(rel='tooltip', title='Like me on Facebook', data-placement='bottom', href='https://www.facebook.com/CreativeTim', target='_blank')
                 i.fab.fa-facebook-square
                 p.d-lg-none.d-xl-none Facebook
             li.nav-item
-              a.nav-link(rel='tooltip', title='Follow us on Instagram', data-placement='bottom', href='https://www.instagram.com/CreativeTimOfficial', target='_blank')
+              a.nav-link(rel='tooltip', title='Follow me on Instagram', data-placement='bottom', href='https://www.instagram.com/CreativeTimOfficial', target='_blank')
                 i.fab.fa-instagram
                 p.d-lg-none.d-xl-none Instagram
     // End Navbar
@@ -67,13 +67,13 @@ html(lang='en')
           .content
             .social-description
               h2 26
-              p Comments
+              p Instagram
             .social-description
               h2 26
-              p Comments
+              p Twitter 
             .social-description
               h2 48
-              p Bookmarks
+              p Facebook 
       .section
         .container
           .button-container
@@ -84,7 +84,7 @@ html(lang='en')
               i.fab.fa-instagram
           h3.title About me
           h5.description
-            | An artist of considerable range, Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.
+            | An artist of considerable range, #{user.fullName.split()[0]} — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.
           .row
             .col-md-6.ml-auto.mr-auto
               h4.title.text-center My Portfolio
@@ -133,22 +133,20 @@ html(lang='en')
           nav
             ul
               li
-                a(href='https://www.creative-tim.com')
-                  | Creative Tim
+                a(href='/')
+                  | Burma-Hills
               li
-                a(href='http://presentation.creative-tim.com')
+                a(href='/burma-hills/presentation')
                   | About Us
               li
-                a(href='http://blog.creative-tim.com')
+                a(href='/burma-hills/blog')
                   | Blog
           #copyright.copyright
             | ©
             script.
               document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-            | , Designed by
-            a(href='https://www.invisionapp.com', target='_blank') Invision
-            | . Coded by
-            a(href='https://www.creative-tim.com', target='_blank') Creative Tim
+            | , Designed and Coded by
+            a(href='https://www.invisionapp.com', target='_blank')  AccurateIT Inc.
             | .
     // Core JS Files
     script(src='/assets/js/core/jquery.min.js', type='text/javascript')

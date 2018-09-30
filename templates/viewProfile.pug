@@ -35,7 +35,7 @@ html(lang='en')
             .dropdown-divider
             a.dropdown-item(href='#') One more separated link
         .navbar-translate
-          a.navbar-brand(href='', rel='tooltip', title='Designed and Coded by AccurateIT ', data-placement='bottom',)
+          a.navbar-brand(href='/', rel='tooltip', title='Designed and Coded by AccurateIT ', data-placement='bottom',)
             | Burma-Hills
           button.navbar-toggler.navbar-toggler(type='button', data-toggle='collapse', data-target='#navigation', aria-controls='navigation-index', aria-expanded='false', aria-label='Toggle navigation')
             span.navbar-toggler-bar.top-bar
@@ -44,15 +44,15 @@ html(lang='en')
         #navigation.collapse.navbar-collapse.justify-content-end(data-nav-image='../assets/img/blurred-image-1.jpg')
           ul.navbar-nav
             li.nav-item
-              a.nav-link(rel='tooltip', title='Follow me on Twitter', data-placement='bottom', href='https://twitter.com/CreativeTim', target='_blank')
+              a.nav-link(rel='tooltip', title='Follow me on Twitter', data-placement='bottom', href='#' target='_blank')
                 i.fab.fa-twitter
                 p.d-lg-none.d-xl-none Twitter
             li.nav-item
-              a.nav-link(rel='tooltip', title='Like me on Facebook', data-placement='bottom', href='https://www.facebook.com/CreativeTim', target='_blank')
+              a.nav-link(rel='tooltip', title='Like me on Facebook', data-placement='bottom', href='#', target='_blank')
                 i.fab.fa-facebook-square
                 p.d-lg-none.d-xl-none Facebook
             li.nav-item
-              a.nav-link(rel='tooltip', title='Follow me on Instagram', data-placement='bottom', href='https://www.instagram.com/CreativeTimOfficial', target='_blank')
+              a.nav-link(rel='tooltip', title='Follow me on Instagram', data-placement='bottom', href='#', target='_blank')
                 i.fab.fa-instagram
                 p.d-lg-none.d-xl-none Instagram
     // End Navbar
@@ -136,17 +136,17 @@ html(lang='en')
                 a(href='/')
                   | Burma-Hills
               li
-                a(href='/burma-hills/presentation')
+                a(href='#')
                   | About Us
               li
-                a(href='/burma-hills/blog')
+                a(href='#')
                   | Blog
           #copyright.copyright
             | ©
             script.
               document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
             | , Designed and Coded by
-            a(href='https://www.invisionapp.com', target='_blank')  AccurateIT Inc.
+            a(href='#', target='_blank')  AccurateIT Inc.
             | .
     // Core JS Files
     script(src='/assets/js/core/jquery.min.js', type='text/javascript')

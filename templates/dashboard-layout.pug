@@ -109,23 +109,20 @@ html(lang='en')
             nav
               ul
                 li
-                  a(href='https://www.creative-tim.com')
-                    | Creative Tim
+                  a(href='/')
+                    | Burma-Hills
                 li
-                  a(href='http://presentation.creative-tim.com')
+                  a(href='/burma-hills/presentation')
                     | About Us
                 li
-                  a(href='http://blog.creative-tim.com')
+                  a(href='/burma-hills/blog')
                     | Blog
-            .copyright
+            #copyright.copyright
               | ©
               script.
-                document.write(new Date().getFullYear())
-              | , Designed by
-              a(href='https://www.invisionapp.com', target='_blank') Invision
-              | . Coded by
-              a(href='https://www.creative-tim.com', target='_blank') Creative Tim
-              | .
+                document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+              | , Designed and Coded by
+              a(href='https://www.invisionapp.com', target='_blank')  AccurateIT Inc.
     // Core JS Filesd
     script(src='/assets/js/core/jquery.min.js')
     script(src='/assets/js/core/popper.min.js')

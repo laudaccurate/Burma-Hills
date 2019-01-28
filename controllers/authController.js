@@ -55,7 +55,7 @@ const logIn = async (req, res, next) => {
     }
     req.session.userId = user._id;
     req.session.userEmail = user.email;
-    return res.redirect("/users/dashboard");
+    return res.redirect("/burma-hills/users/dashboard");
   } catch (error) {
     console.log(error);
     return next(error);

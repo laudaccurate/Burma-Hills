@@ -1,0 +1,61 @@
+html.fonts
+  head
+  body
+    div
+      link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css')
+      style(type='text/css').
+        .fonts{font-size: 12.5px;}.ipay-btn{background-color: #04448C;border-color: #04448C;border-radius: 17px !important;}.modal{width: 27% !important;}.modal-header{padding-left:48px !important;padding-right: 48px !important;border-bottom: none !important;text-align: center !important;}.modal-footer{height: 120px;padding-left:48px !important;padding-right: 48px !important;margin-bottom: -17px !important;border-top: none !important;}.modal-body{margin-bottom: -25px;padding-right: 48px !important;padding-left: 48px !important;border-bottom: none !important;margin-top: -27px;}#close:hover{text-decoration: none !important;}.logo{width: 65px;height: 65px;}
+      .container
+        .row
+          .col-lg-3.col-md-3.col-xs-3.col-sm-5
+            .input-group-prepend
+              button.btn.btn-primary.ipay-btn(type='button', data-toggle='modal', data-target='#ipayModal') Make Payment
+        #ipayModal.modal.fade.m-auto(role='dialog', data-keyboard='true', data-backdrop='true')
+          .modal-dialog
+            .modal-content
+              .modal-header
+                img.mx-auto.d-block.logo(src='http://fpoimg.com/95x65?text=Logo')
+              form#ipay_checkout(action='https://community.ipaygh.com/gateway', method='post', name='ipay_checkout', target='_blank')
+                .modal-body
+                  legend.text-center.mt-1 Make Payment
+                  input(name='merchant_key', type='hidden', value='tk_faf497c4-c71b-11e8-a08c-f23c9170642f')
+                  input#merchant_code(type='hidden', value='TST000000002068')
+                  input(name='success_url', type='hidden', value='http://burma-hills.herokuapp.com/')
+                  input(name='cancelled_url', type='hidden', value='http://burma-hills.herokuapp.com/')
+                  input#invoice_id(name='invoice_id', type='hidden', value='')
+                  .row
+                    .col-lg
+                      .form-group.input-group
+                        input#name.form-control(type='text', title='Name', name='extra_name', placeholder='First & Last Name')
+                  .row
+                    .col-lg
+                      .form-group.input-group
+                        input#number.form-control(type='tel', title='Mobile Number', name='number', maxlength='10', placeholder='Contact Number')
+                  .row
+                    .col-lg
+                      .form-group.input-group
+                        input#email.form-control(type='email', name='email', placeholder='Email')
+                  .row
+                    .col-lg
+                      .form-group.input-group
+                        input#total.form-control(type='text', name='total', placeholder='Amount(GH₵)')
+                  .row
+                    .col-lg
+                      .form-group.input-group
+                        input#description.form-control(type='text', name='description', placeholder='Description of Payment')
+                  .row
+                    .col-lg
+                      button.btn.btn-primary.ipay-btn.btn-block(type='submit', style='padding: 8px 11px;')
+                        strong Pay
+                  .row
+                    .col-lg.text-center.mt-2
+                      a#close(href='', data-dismiss='modal') Cancel
+                .modal-footer.justify-content-center
+                  .row
+                    .col-lg
+                      img.img-fluid.mr-auto(src='https://payments.ipaygh.com/app/webroot/img/iPay_payments.png', style='width: 100%;', alt='Powered by iPay')
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js')
+      script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js')
+      script(type='text/javascript').
+        (function(){Date.prototype.today = function () { return  this.getFullYear()+(((this.getMonth()+1) < 10)?"0":"") + (this.getMonth()+1) +((this.getDate() < 10)?"0":"") + this.getDate();};Date.prototype.timeNow = function () { return ((this.getHours() < 10)?"0":"") + this.getHours() +((this.getMinutes() < 10)?"0":"") + this.getMinutes() +((this.getSeconds() < 10)?"0":"") + this.getSeconds();};document.getElementById("invoice_id").value = document.getElementById("merchant_code").value+ new Date().today() + new Date().timeNow();})();

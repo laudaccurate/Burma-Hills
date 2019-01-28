@@ -1,0 +1,101 @@
+extends dashboard-layout.pug
+
+block main
+  // End Navbar
+  .panel-header
+    //- .header.text-center
+    //-   h2.title Notifications
+    //-   p.category
+    //-     a(target='_blank', href='https://github.com/mouse0270') Robert McIntosh
+    //-     a(href='http://bootstrap-notify.remabledesigns.com/', target='_blank') full documentation.
+  .content
+    .row
+      .col-md-12
+        .card
+          .card-header
+            h4.card-title Notifications Style
+          .card-body
+            .alert.alert-success.alert-with-icon(data-notify='container')
+              button.close(type='button', aria-hidden='true')
+                i.now-ui-icons.ui-1_simple-remove
+              span.now-ui-icons.ui-1_bell-53(data-notify='icon')
+              span(data-notify='message') This is a notification with close button and icon.
+            .alert.alert-info.alert-with-icon(data-notify='container')
+              button.close(type='button', aria-hidden='true')
+                i.now-ui-icons.ui-1_simple-remove
+              span.now-ui-icons.ui-1_bell-53(data-notify='icon')
+              span(data-notify='message') This is a notification with close button and iconj;sldjl;ljcsnj;s;KJXMKMSDALJHNSDVIKWJKNlkjolaikjiojmnvhunfnkgillnbdygilbert laud yaw akakppo.
+              .notification-desc
+                span.notification-source Burma-Hills Inc.
+                span.notification-date 12th December, 2019.
+            .alert.alert-danger.alert-with-icon(data-notify='container')
+              button.close(type='button', aria-hidden='true')
+                i.now-ui-icons.ui-1_simple-remove
+              span.now-ui-icons.ui-1_bell-53(data-notify='icon')
+              span(data-notify='message') This is a notification with close button and icon.
+            .alert.alert-success.alert-with-icon(data-notify='container')
+              button.close(type='button', aria-hidden='true')
+                i.now-ui-icons.ui-1_simple-remove
+              span.now-ui-icons.ui-1_bell-53(data-notify='icon')
+              span(data-notify='message') This is a notification with close button and icon.
+            .alert.alert-warning.alert-with-icon(data-notify='container')
+              button.close(type='button', aria-hidden='true')
+                i.now-ui-icons.ui-1_simple-remove
+              span.now-ui-icons.ui-1_bell-53(data-notify='icon')
+              span(data-notify='message') This is a notification with close button and icon.
+      //- .col-md-6
+      //-   .card
+      //-     .card-header
+      //-       h4.card-title Notification states
+      //-     .card-body
+      //-       .alert.alert-primary
+      //-         button.close(type='button', aria-hidden='true')
+      //-           i.now-ui-icons.ui-1_simple-remove
+      //-         span
+      //-           b  Primary - 
+      //-       .alert.alert-info
+      //-         button.close(type='button', aria-hidden='true')
+      //-           i.now-ui-icons.ui-1_simple-remove
+      //-         span
+      //-           b  Info - 
+      //-       .alert.alert-success
+      //-         button.close(type='button', aria-hidden='true')
+      //-           i.now-ui-icons.ui-1_simple-remove
+      //-         span
+      //-           b  Success - 
+      //-       .alert.alert-warning
+      //-         button.close(type='button', aria-hidden='true')
+      //-           i.now-ui-icons.ui-1_simple-remove
+      //-         span
+      //-           b  Warning - 
+      //-       .alert.alert-danger
+      //-         button.close(type='button', aria-hidden='true')
+      //-           i.now-ui-icons.ui-1_simple-remove
+      //-         span
+      //-           b  Danger - 
+      //- .col-md-12
+      //-   .card
+      //-     .card-body
+      //-       .places-buttons
+      //-         .row
+      //-           .col-md-6.ml-auto.mr-auto.text-center
+      //-             h4.card-title
+      //-               p.category Click to view notifications
+      //-         .row
+      //-           .col-lg-8.ml-auto.mr-auto
+      //-             .row
+      //-               .col-md-4
+      //-                 button.btn.btn-primary.btn-block(onclick="demo.showNotification('top','left')") Top Left
+      //-               .col-md-4
+      //-                 button.btn.btn-primary.btn-block(onclick="demo.showNotification('top','center')") Top Center
+      //-               .col-md-4
+      //-                 button.btn.btn-primary.btn-block(onclick="demo.showNotification('top','right')") Top Right
+      //-         .row
+      //-           .col-lg-8.ml-auto.mr-auto
+      //-             .row
+      //-               .col-md-4
+      //-                 button.btn.btn-primary.btn-block(onclick="demo.showNotification('bottom','left')") Bottom Left
+      //-               .col-md-4
+      //-                 button.btn.btn-primary.btn-block(onclick="demo.showNotification('bottom','center')") Bottom Center
+      //-               .col-md-4
+      //-                 button.btn.btn-primary.btn-block(onclick="demo.showNotification('bottom','right')") Bottom Right

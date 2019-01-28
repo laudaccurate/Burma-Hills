@@ -507,6 +507,36 @@ fieldset:not(:first-of-type) {
   padding-bottom: 0;
 }
 
+/*                    My  Custom  CSS   Start                 */
+#dashboard-photo {
+  /* display: none; */
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+.notification-desc {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  color: #485869;
+  font-size: 12px;
+}
+
+.notification-date {
+  margin-right: 17px;
+}
+
+.card-layer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*                            My   Custom   CSS   End              */
+
+
+
 @media screen and (max-width: 991px) {
   .section-navbars .navbar-collapse {
     display: none !important;

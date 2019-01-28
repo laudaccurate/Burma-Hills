@@ -30,7 +30,7 @@ const createUser = async (req, res, next) => {
     req.session.userId = user._id;
     req.session.userEmail = user.email;
     res.locals.currentUser = user;
-    return res.redirect("/users/dashboard");
+    return res.redirect("/burma-hills/users/dashboard");
   } catch (error) {
     return next(error);
   }

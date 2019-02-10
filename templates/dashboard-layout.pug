@@ -27,7 +27,7 @@ html(lang='en')
           //- a.simple-text.logo-mini(href='http://www.creative-tim.com')
           //-   | Hi
           a.simple-text.logo-normal(href=`/users/${user._id}/viewProfile`)
-            img#dashboard-photo.avatar.border-gray(src='/assets/img/default-avatar.png', alt='...')
+            img#dashboard-photo.avatar.border-gray(src=`${user.profilePic || '/assets/img/default-avatar.png'}`, alt='...')
             | &nbsp #{user.fullName}
         .sidebar-wrapper
           ul.nav

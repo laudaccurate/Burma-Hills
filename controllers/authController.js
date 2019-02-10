@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt-nodejs");
 const util = require("../util");
 const User = mongoose.model("User");
 
@@ -22,7 +22,7 @@ const createUser = async (req, res, next) => {
       });
     }
 
-    const hash = await bcrypt.hash(password, 10);
+    const hash = await bcrypt.hashSync(password);
     const user = await User.create({
       ...req.body,
       password: hash
@@ -47,7 +47,8 @@ const logIn = async (req, res, next) => {
       });
     }
 
-    const matching = await bcrypt.compare(password, user.password);
+    const matching = await bcrypt.compareSync(password, user.password);
+    console.log("Passed");
     if (!matching) {
       return res.render("login", {
         errorMessage: "Incorrect Passwords"
@@ -57,7 +58,7 @@ const logIn = async (req, res, next) => {
     req.session.userEmail = user.email;
     return res.redirect("/burma-hills/users/dashboard");
   } catch (error) {
-    console.log(error);
+    console.log("Error :", error);
     return next(error);
   }
 };

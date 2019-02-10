@@ -533,6 +533,16 @@ fieldset:not(:first-of-type) {
   align-items: center;
 }
 
+.event-cards {
+  display: flex;
+  column-count: 3;
+  justify-content: space-around;
+}
+
+.card-img-top {
+  height: 180px !important;
+}
+
 /*                            My   Custom   CSS   End              */
 
 

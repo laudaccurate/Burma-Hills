@@ -1,5 +1,12 @@
 const mongoose = require("mongoose");
 const User = mongoose.model("User");
+const cloudinary = require("cloudinary");
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
 
 const updateProfile = async (req, res, next) => {
   let {
@@ -97,4 +104,19 @@ const updateProfile = async (req, res, next) => {
   });
 };
 
-module.exports = { updateProfile };
+const setProfilePhoto = async (req, res, next) => {
+  try {
+    let result = await cloudinary.uploader.upload(req.file.path);
+
+    const user = await User.findByIdAndUpdate(req.session.userId, {
+      profilePic: result.url
+    });
+
+    console.log(user.profilePic);
+    return res.render("profile", { user, title: "Profile" });
+  } catch (error) {
+    console.log("Error:", error);
+  }
+};
+
+module.exports = { updateProfile, setProfilePhoto };

@@ -1,7 +1,25 @@
 const mongoose = require("mongoose");
 const { requireLogin } = require("../middleware");
 const User = mongoose.model("User");
-const { updateProfile } = require("../controllers/profileController");
+const path = require("path");
+const multer = require("multer");
+const {
+  updateProfile,
+  setProfilePhoto
+} = require("../controllers/profileController");
+
+const storage = multer.diskStorage({
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}${path.extname(file.originalname)}`);
+  },
+  destination: (req, file, cb) => {
+    cb(null, path.resolve(__dirname, "..", "store"));
+  }
+});
+
+const upload = multer({
+  storage
+});
 
 module.exports = app => {
   app.param("userId", async (req, res, next, id) => {
@@ -42,9 +60,12 @@ module.exports = app => {
 
   app.post("/burma-hills/users/updateProfile", requireLogin, updateProfile);
 
-  app.post("/burma-hills/users/updatePhoto", requireLogin, (req, res) => {
-    return res.json("profile photo changed");
-  });
+  app.post(
+    "/burma-hills/users/updatePhoto",
+    requireLogin,
+    upload.single("profilePic"),
+    setProfilePhoto
+  );
 
   app.get("/users/:userId/viewProfile", requireLogin, (req, res, next) => {
     const user = req.user;
@@ -69,7 +90,7 @@ module.exports = app => {
 
   app.get("/burma-hills/events", requireLogin, async (req, res, next) => {
     const user = await User.findOne({ _id: req.session.userId });
-    return res.render("events", { user });
+    return res.render("event", { user });
   });
 
   app.get(

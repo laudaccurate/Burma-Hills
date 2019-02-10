@@ -6,26 +6,82 @@ block main
   .content
     .row
       .col-md-12
-        .card
+        .card.card-tasks
           .card-header
-            h4.card-title  Neighbours
+            h5.card-category Burma-Hills
+            .card-layer
+              h4.card-title Neighbours
+              .modal.fade.bd-example-modal-lg(tabindex='-1', role='dialog', aria-labelledby='notify-modal', aria-hidden='true')
+                .modal-dialog.modal-lg
+                  .modal-content
+                    .modal-header
+                      h5#exampleModalLabel.modal-title New Event
+                      button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        span(aria-hidden='true') ×
+                    .modal-body
+                      form(method='post', action='#')
+                        .row
+                          .col
+                            .input-group
+                              .input-group-prepend
+                                .input-group-text
+                                  i.now-ui-icons.shopping_tag-content
+                              input.form-control(type='text', placeholder='Event Title or Description')
+                          .col
+                            .input-group
+                              .input-group-prepend
+                                .input-group-text
+                                  i.now-ui-icons.travel_istanbul
+                              input.form-control(type='text', placeholder='Venue')
+                        br
+                        .row
+                          .col
+                            .input-group
+                              .input-group-prepend
+                                .input-group-text
+                                  i.now-ui-icons.ui-1_calendar-60
+                              input.form-control.date-picker(type='text', value="12/12/2012" data-datepicker-color='success')
+                          .col
+                            .input-group
+                              .input-group-prepend
+                                .input-group-text
+                                  i.now-ui-icons.business_money-coins
+                              input.form-control(type='text', placeholder='Rate')
+                        .row
+                          .col-md-6
+                            input#event-flyer(type="file", name="event-flyer" hidden)
+                            button#event-flyer-btn.btn.btn-warning.btn-round(type='button') 
+                              i.now-ui-icons.design_image
+                              | &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Upload Event Flyer / Invaitation Card &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+                    .modal-footer
+                      button.btn.btn-primary.btn-round(type='button') 
+                        i.now-ui-icons.location_pin
+                        | &nbsp Add Location
+                      button.btn.btn-success.btn-round(type='button') 
+                        i.now-ui-icons.ui-1_send
+                        | &nbsp Add Event
           .card-body
-            .table-responsive
+            .table-full-width.table-responsive
               table.table
-                thead.text-primary 
+                thead.text-primary
                   th Name
                   th Email
                   th Telephone
                   th House Number
-                  th
+                  th 
                 tbody
                   each neighbour in neighbours
                     tr
-                      td #{neighbour.fullName}
-                      td #{neighbour.email}
-                      td #{neighbour.telephoneNumber}
-                      td #{neighbour.houseNumber}
-                      td
-                        a(href=`/users/${neighbour._id}/viewProfile`)
-                          i.fa.fa-eye
+                      td.text-left #{neighbour.fullName}
+                      td.text-left #{neighbour.email}
+                      td.text-left #{neighbour.telephoneNumber}
+                      td.text-left #{neighbour.houseNumber}
+                      td.td-actions.text-right
+                        a.btn.btn-danger.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#' data-toggle="tooltip" data-placement="bottom" title="View Profile")
+                          i.now-ui-icons.users_single-02
+                        a.btn.btn-success.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#', data-toggle='tooltip', data-placement='bottom' title='Send Message', data-original-title='Confirm Attendance')
+                          i.now-ui-icons.ui-2_chat-round
+                        a.btn.btn-info.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#', data-toggle='tooltip', data-placement='bottom' title='Favourite', data-original-title='View Flyer')
+                          i.now-ui-icons.ui-2_favourite-28
                   

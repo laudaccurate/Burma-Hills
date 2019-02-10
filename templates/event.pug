@@ -1,0 +1,166 @@
+extends dashboard-layout.pug
+
+block main
+  // End Navbar
+  .panel-header.panel-header-sm
+  .content
+    .row
+      .col-md-12
+        .card.card-tasks
+          .card-header
+            h5.card-category Burma-Hills
+            .card-layer
+              h4.card-title Upcoming Events
+              button#notify-modal.btn.btn-success.btn-round(type='button',  data-toggle='modal', data-target='.bd-example-modal-lg')
+                i.now-ui-icons.ui-1_send
+                | &nbsp Create Event
+              .modal.fade.bd-example-modal-lg(tabindex='-1', role='dialog', aria-labelledby='notify-modal', aria-hidden='true')
+                .modal-dialog.modal-lg
+                  .modal-content
+                    .modal-header
+                      h5#exampleModalLabel.modal-title New Event
+                      button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        span(aria-hidden='true') ×
+                    .modal-body
+                      form(method='post', action='#')
+                        .row
+                          .col
+                            .input-group
+                              .input-group-prepend
+                                .input-group-text
+                                  i.now-ui-icons.shopping_tag-content
+                              input.form-control(type='text', placeholder='Event Title or Description')
+                          .col
+                            .input-group
+                              .input-group-prepend
+                                .input-group-text
+                                  i.now-ui-icons.travel_istanbul
+                              input.form-control(type='text', placeholder='Venue')
+                        br
+                        .row
+                          .col
+                            .input-group
+                              .input-group-prepend
+                                .input-group-text
+                                  i.now-ui-icons.ui-1_calendar-60
+                              input.form-control.date-picker(type='text', value="12/12/2012" data-datepicker-color='success')
+                          .col
+                            .input-group
+                              .input-group-prepend
+                                .input-group-text
+                                  i.now-ui-icons.business_money-coins
+                              input.form-control(type='text', placeholder='Rate')
+                        .row
+                          .col-md-6
+                            input#event-flyer(type="file", name="event-flyer" hidden)
+                            button#event-flyer-btn.btn.btn-warning.btn-round(type='button') 
+                              i.now-ui-icons.design_image
+                              | &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Upload Event Flyer / Invaitation Card &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+                    .modal-footer
+                      button.btn.btn-primary.btn-round(type='button') 
+                        i.now-ui-icons.location_pin
+                        | &nbsp Add Location
+                      button.btn.btn-success.btn-round(type='button') 
+                        i.now-ui-icons.ui-1_send
+                        | &nbsp Add Event
+          .card-body
+            .row.event-cards
+              .col-md-4
+                .card
+                  img.card-img-top(src='/img/neigh4.jpg', alt='Card image cap')
+                  .card-body
+                    h4.card-title Card title
+                    p.card-text
+                      | Some quick example text to build on the card title and make up the bulk of the card's content.
+                    .td-actions.text-center
+                      a.btn.btn-danger.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#' data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom")
+                        i.now-ui-icons.location_pin
+                      a.btn.btn-success.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#', data-toggle='tooltip', data-placement='bottom' title='Confirm Attendance', data-original-title='Confirm Attendance')
+                        i.now-ui-icons.ui-2_like
+                      a.btn.btn-info.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#', data-toggle='tooltip', data-placement='bottom' title='View Flyer', data-original-title='View Flyer')
+                        i.now-ui-icons.media-1_album
+              .col-md-4
+                .card
+                  img.card-img-top(src='/img/call.jpg', alt='Card image cap')
+                  .card-body
+                    h4.card-title Card title
+                    p.card-text
+                      | Some quick example text to build on the card title and make up the bulk of the card's content.
+                    .td-actions.text-center
+                      a.btn.btn-danger.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#' data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom")
+                        i.now-ui-icons.location_pin
+                      a.btn.btn-success.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#', data-toggle='tooltip', data-placement='bottom' title='Confirm Attendance', data-original-title='Confirm Attendance')
+                        i.now-ui-icons.ui-2_like
+                      a.btn.btn-info.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#', data-toggle='tooltip', data-placement='bottom' title='View Flyer', data-original-title='View Flyer')
+                        i.now-ui-icons.media-1_album
+              .col-md-4
+                .card
+                  img.card-img-top(src='/img/conference.jpg', alt='Card image cap')
+                  .card-body
+                    h4.card-title Card title
+                    p.card-text
+                      | Some quick example text to build on the card title and make up the bulk of the card's content.
+                    .td-actions.text-center
+                      a.btn.btn-danger.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#' data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom")
+                        i.now-ui-icons.location_pin
+                      a.btn.btn-success.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#', data-toggle='tooltip', data-placement='bottom' title='Confirm Attendance', data-original-title='Confirm Attendance')
+                        i.now-ui-icons.ui-2_like
+                      a.btn.btn-info.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#', data-toggle='tooltip', data-placement='bottom' title='View Flyer', data-original-title='View Flyer')
+                        i.now-ui-icons.media-1_album
+              .col-md-4
+                .card
+                  img.card-img-top(src='/img/dashboard_full_3.png', alt='Card image cap')
+                  .card-body
+                    h4.card-title Card title
+                    p.card-text
+                      | Some quick example text to build on the card title and make up the bulk of the card's content.
+                    .td-actions.text-center
+                      a.btn.btn-danger.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#' data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom")
+                        i.now-ui-icons.location_pin
+                      a.btn.btn-success.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#', data-toggle='tooltip', data-placement='bottom' title='Confirm Attendance', data-original-title='Confirm Attendance')
+                        i.now-ui-icons.ui-2_like
+                      a.btn.btn-info.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#', data-toggle='tooltip', data-placement='bottom' title='View Flyer', data-original-title='View Flyer')
+                        i.now-ui-icons.media-1_album
+              .col-md-4
+                .card
+                  img.card-img-top(src='/img/comm5.jpg', alt='Card image cap')
+                  .card-body
+                    h4.card-title Card title
+                    p.card-text
+                      | Some quick example text to build on the card title and make up the bulk of the card's content.
+                    .td-actions.text-center
+                      a.btn.btn-danger.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#' data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom")
+                        i.now-ui-icons.location_pin
+                      a.btn.btn-success.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#', data-toggle='tooltip', data-placement='bottom' title='Confirm Attendance', data-original-title='Confirm Attendance')
+                        i.now-ui-icons.ui-2_like
+                      a.btn.btn-info.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#', data-toggle='tooltip', data-placement='bottom' title='View Flyer', data-original-title='View Flyer')
+                        i.now-ui-icons.media-1_album
+              .col-md-4
+                .card
+                  img.card-img-top(src='/img/android.jpg', alt='Card image cap')
+                  .card-body
+                    h4.card-title Card title
+                    p.card-text
+                      | Some quick example text to build on the card title and make up the bulk of the card's content.
+                    .td-actions.text-center
+                      a.btn.btn-danger.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#' data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom")
+                        i.now-ui-icons.location_pin
+                      a.btn.btn-success.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#', data-toggle='tooltip', data-placement='bottom' title='Confirm Attendance', data-original-title='Confirm Attendance')
+                        i.now-ui-icons.ui-2_like
+                      a.btn.btn-info.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#', data-toggle='tooltip', data-placement='bottom' title='View Flyer', data-original-title='View Flyer')
+                        i.now-ui-icons.media-1_album
+              .col-md-4
+                .card
+                  img.card-img-top(src='/img/banner.jpg', alt='Card image cap')
+                  .card-body
+                    h4.card-title Card title
+                    p.card-text
+                      | Some quick example text to build on the card title and make up the bulk of the card's content.
+                    .td-actions.text-center
+                      a.btn.btn-danger.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#' data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom")
+                        i.now-ui-icons.location_pin
+                      a.btn.btn-success.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#', data-toggle='tooltip', data-placement='bottom' title='Confirm Attendance', data-original-title='Confirm Attendance')
+                        i.now-ui-icons.ui-2_like
+                      a.btn.btn-info.btn-round.btn-icon.btn-icon-mini.btn-neutral(href='#', data-toggle='tooltip', data-placement='bottom' title='View Flyer', data-original-title='View Flyer')
+                        i.now-ui-icons.media-1_album

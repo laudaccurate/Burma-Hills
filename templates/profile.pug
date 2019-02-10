@@ -97,11 +97,11 @@ block main
           .card-body
             .author
               a(href='#')
-                img#profilePic.avatar.border-gray(src='/assets/img/default-avatar.png', alt='...')
+                img#profilePic.avatar.border-gray(src=`${user.profilePic || '/assets/img/default-avatar.png'}`, alt='...')
                 h5(style="color:black") #{user.fullName}
               p.description #{user.bio || '"I am the beginning and the end, the first and the last"'} 
               p
-            form#profilePicForm(action=`/users/${user._id}/updatePhoto` name="profilePicForm" method="Post")
+            form#profilePicForm(action=`/burma-hills/users/updatePhoto` name="profilePicForm" method="Post" enctype="multipart/form-data")
               p.description.text-center 
                 input#profilePicInput(type="file", name="profilePic" value=user.profilePic)
                 button#profilePicButton.btn.btn-primary.btn-round(type="button") Change Photo

@@ -515,18 +515,6 @@ fieldset:not(:first-of-type) {
   margin-right: 7px;
 }
 
-.notification-desc {
-  margin-top: 12px;
-  display: flex;
-  justify-content: space-between;
-  color: #485869;
-  font-size: 12px;
-}
-
-.notification-date {
-  margin-right: 17px;
-}
-
 .card-layer {
   display: flex;
   justify-content: space-between;
@@ -540,7 +528,18 @@ fieldset:not(:first-of-type) {
 }
 
 .card-img-top {
-  height: 180px !important;
+  height: 280px !important;
+}
+
+.photo-control {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#passwordButton {
+  margin-left: 80px;
 }
 
 /*                            My   Custom   CSS   End              */

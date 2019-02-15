@@ -67,14 +67,15 @@ html(lang='en')
         .container
           .col-md-4.ml-auto.mr-auto
             .card.card-plain.card-login(style="width:650px;")
-              form.form(method='POST', action='/signup')
-                if errorMessage
-                  p.errorMessage(data-errorMessage=errorMessage)
+              form.form(method='POST', action='/burma-hills/signup')
+                if alertMessage
+                  p#alertMessage(data-alertMessage=alertMessage, data-messageType=messageType, data-messageTitle=messageTitle) 
                   script.
+                    let alert = document.getElementById("alertMessage");
                     swal({
-                      title: "Authentication Error",
-                      text: document.getElementById("errorMessage").getAttribute("data-errorMessage"),
-                      icon: "success",
+                      title: alert.getAttribute("data-messageTitle"),
+                      text: alert.getAttribute("data-alertMessage"),
+                      icon: alert.getAttribute("data-messageType")
                     });
                 .card-header.text-center
                   .logo-container

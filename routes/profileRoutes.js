@@ -5,7 +5,9 @@ const path = require("path");
 const multer = require("multer");
 const {
   updateProfile,
-  setProfilePhoto
+  setProfilePhoto,
+  requestPasswordChange,
+  changePassword
 } = require("../controllers/profileController");
 
 const storage = multer.diskStorage({
@@ -67,6 +69,14 @@ module.exports = app => {
     setProfilePhoto
   );
 
+  app.get("/burma-hills/change_password", requireLogin, requestPasswordChange);
+
+  app.get("/burma-hills/users/change_password", requireLogin, (req, res) => {
+    return res.render("change_password");
+  });
+
+  app.post("/burma-hills/users/change_password", requireLogin, changePassword);
+
   app.get("/users/:userId/viewProfile", requireLogin, (req, res, next) => {
     const user = req.user;
     return res.render("viewProfile", { user });
@@ -94,12 +104,12 @@ module.exports = app => {
   });
 
   app.get(
-    "/burma-hills/users/notifications",
+    "/burma-hills/users/gallery",
     requireLogin,
     async (req, res, next) => {
       const user = await User.findOne({ _id: req.session.userId });
-      const title = "Notifications";
-      return res.render("notifications", { user, title });
+      const title = "Gallery";
+      return res.render("gallery", { user, title });
     }
   );
 

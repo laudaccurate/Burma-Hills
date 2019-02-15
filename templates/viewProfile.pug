@@ -83,11 +83,10 @@ html(lang='en')
             a.btn.btn-default.btn-round.btn-lg.btn-icon(href='#button', rel='tooltip', title='Follow me on Instagram')
               i.fab.fa-instagram
           h3.title About me
-          h5.description
-            | An artist of considerable range, #{user.fullName.split()[0]} — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.
+          h5.description #{user.bio} 
           .row
             .col-md-6.ml-auto.mr-auto
-              h4.title.text-center My Portfolio
+              h4.title.text-center Photos
               .nav-align-center
                 ul.nav.nav-pills.nav-pills-primary.nav-pills-just-icons(role='tablist')
                   li.nav-item
@@ -96,9 +95,9 @@ html(lang='en')
                   li.nav-item
                     a.nav-link.active(data-toggle='tab', href='#home', role='tablist')
                       i.now-ui-icons.location_world
-                  li.nav-item
-                    a.nav-link(data-toggle='tab', href='#messages', role='tablist')
-                      i.now-ui-icons.sport_user-run
+                  //- li.nav-item
+                  //-   a.nav-link(data-toggle='tab', href='#messages', role='tablist')
+                  //-     i.now-ui-icons.sport_user-run
             // Tab panes
             .tab-content.gallery
               #home.tab-pane.active(role='tabpanel')
@@ -119,15 +118,15 @@ html(lang='en')
                     .col-md-6
                       img.img-raised(src='/assets/img/bg7.jpg', alt='')
                       img.img-raised(src='/assets/img/bg8.jpg', alt='')
-              #messages.tab-pane(role='tabpanel')
-                .col-md-10.ml-auto.mr-auto
-                  .row.collections
-                    .col-md-6
-                      img.img-raised(src='/assets/img/bg3.jpg', alt='')
-                      img.img-raised(src='/assets/img/bg8.jpg', alt='')
-                    .col-md-6
-                      img.img-raised(src='/assets/img/bg7.jpg', alt='')
-                      img.img-raised(src='/assets/img/bg6.jpg')
+              //- #messages.tab-pane(role='tabpanel')
+              //-   .col-md-10.ml-auto.mr-auto
+              //-     .row.collections
+              //-       .col-md-6
+              //-         img.img-raised(src='/assets/img/bg3.jpg', alt='')
+              //-         img.img-raised(src='/assets/img/bg8.jpg', alt='')
+              //-       .col-md-6
+              //-         img.img-raised(src='/assets/img/bg7.jpg', alt='')
+              //-         img.img-raised(src='/assets/img/bg6.jpg')
       footer.footer.footer-default
         .container
           nav
